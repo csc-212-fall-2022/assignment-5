@@ -1,0 +1,4 @@
+{
+    "clang-tidy.compilerArgs": ["-extra-arg=-std=c++17"],
+    "cmake.configureSettings": {"CMAKE_EXPORT_COMPILE_COMMANDS": 1}
+}
