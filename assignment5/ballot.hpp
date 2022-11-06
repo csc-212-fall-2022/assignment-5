@@ -17,6 +17,11 @@ struct Candidate {
   int id;
   int contestId;
 
+  std::ostream &operator<<(std::ostream &os) const {
+    os << "Candidate{" << name << "," << id << "," << contestId << "}";
+    return os;
+  }
+
   bool operator==(const Candidate &rhs) const {
     return name == rhs.name && id == rhs.id && contestId == rhs.contestId;
   }

@@ -34,3 +34,6 @@
 build
 data
 .cache
+
+cmake-build-debug
+.idea

@@ -1,6 +1,7 @@
 #include "ballot.hpp"
 #include "boost/algorithm/string.hpp"
 #include "boost/format.hpp"
+#include "unicode/unistr.h"
 #include <algorithm>
 #include <filesystem>
 #include <fstream>
@@ -165,9 +166,14 @@ ParseElectionMasterLine(const std::string &line) {
   boost::trim_left_if(sId, isZero);
   std::string name = line.substr(17, 50);
   boost::trim_right(name);
-  std::string candConId = line.substr(74, 7);
-  boost::trim_left_if(candConId, isZero);
   if (type == "Candidate") {
+    // substr goes weird when we have non-ascii characters,
+    // so we need to convert to a unicode string
+    icu::UnicodeString ucandConId;
+    icu::UnicodeString::fromUTF8(line).extract(74, 7, ucandConId);
+    std::string candConId;
+    ucandConId.toUTF8String(candConId);
+    boost::trim_left_if(candConId, isZero);
     Candidate candidate = {name, std::stoi(sId), std::stoi(candConId)};
     return candidate;
   } else if (type == "Contest") {

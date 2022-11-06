@@ -40,8 +40,10 @@ else()
     include_directories(${Boost_INCLUDE_DIRS})
 endif ()
 
+find_package(ICU COMPONENTS uc REQUIRED)
+
 add_library(Ballot assignment5/ballot.hpp assignment5/ballot.cpp)
-target_link_libraries(Ballot Boost::boost)
+target_link_libraries(Ballot Boost::boost ICU::uc)
 
 add_executable(BallotTest assignment5/ballot.test.cpp)
 target_link_libraries(BallotTest Ballot Doctest)
