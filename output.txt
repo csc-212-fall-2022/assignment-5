@@ -1,0 +1,53 @@
+Loading election data...
+****Election Board of Supervisors, District 1 ****
+Round 1
+ANDY THORNLEY has been eliminated. 23 ballots exhausted
+Round 2
+SHERMAN R. D'SILVA has been eliminated. 50 ballots exhausted
+Round 3
+JASON JUNGREIS has been eliminated. 44 ballots exhausted
+Round 4
+JONATHAN LYENS has been eliminated. 54 ballots exhausted
+Round 5
+SAMUEL KWONG has been eliminated. 57 ballots exhausted
+Round 6
+BRIAN J. LARKIN has been eliminated. 103 ballots exhausted
+Round 7
+RICHIE GREENBERG has been eliminated. 160 ballots exhausted
+Round 8
+DAVID LEE has been eliminated. 480 ballots exhausted
+Round 9
+MARJAN PHILHOUR has been eliminated. 2520 ballots exhausted
+Round 10
+SANDRA LEE FEWER has won Board of Supervisors, District 1
+****Election Board of Supervisors, District 3 ****
+Round 1
+AARON PESKIN has won Board of Supervisors, District 3
+****Election Board of Supervisors, District 5 ****
+Round 1
+LONDON BREED has won Board of Supervisors, District 5
+****Election Board of Supervisors, District 7 ****
+Round 1
+MIKE YOUNG has been eliminated. 170 ballots exhausted
+Round 2
+JOHN FARRELL has been eliminated. 563 ballots exhausted
+Round 3
+BEN MATRANGA has been eliminated. 1115 ballots exhausted
+Round 4
+JOEL ENGARDIO has been eliminated. 2138 ballots exhausted
+Round 5
+NORMAN YEE has won Board of Supervisors, District 7
+****Election Board of Supervisors, District 9 ****
+Round 1
+HILLARY RONEN has won Board of Supervisors, District 9
+****Election Board of Supervisors, District 11 ****
+Round 1
+BERTA HERNANDEZ has been eliminated. 95 ballots exhausted
+Round 2
+FRANCISCO HERRERA has been eliminated. 249 ballots exhausted
+Round 3
+MAGDALENA DE GUZMAN has been eliminated. 599 ballots exhausted
+Round 4
+KIM ALVARENGA has been eliminated. 1750 ballots exhausted
+Round 5
+AHSHA SAFAI has won Board of Supervisors, District 11

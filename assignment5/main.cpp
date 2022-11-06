@@ -15,7 +15,7 @@ void run_elections(ElectionData data, std::optional<int> district) {
     if (district.has_value() && contest.district != district.value()) {
       continue;
     }
-    std::cout<< "Election " << contest.name << std::endl;
+    std::cout<< "****Election " << contest.name << " ****" << std::endl;
     auto election = Election(contest, data.candidates.at(contest.id), data.ballots.at(contest.id));
     election.run();
   }

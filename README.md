@@ -4,7 +4,7 @@ In this assignment, we'll use a priority queue to simulate the tabulation of the
 
 This assignment is a bit different from previous assignments, as it's more focused on building a program to accomplish a task. Rather than implementing the data structure ourselves, we'll use the C++ standard library more than we have been.
 
-> **Warning!**
+> **Warning**
 > This assignment uses the [Boost](https://www.boost.org/) libraries. If you have `boost` installed, `cmake` will find it. If not, it will download `boost` from Github and will take an obnoxiously long time to configure. If you go that route, try to avoid deleting your `build/` folder.
 > - If you use the devcontainer, the `Dockerfile` for this assignment installs `boost`.
 > - On the Mac, you can install with `brew install boost`.
@@ -42,9 +42,9 @@ In your `build/` directory, you can run `./Election --data-dir ../data` to run t
 
 The actual results of the election are [here](https://sfelections.sfgov.org/november-8-2016-election-results-detailed-reports).
 
-> **Warning**
-> I'm somewhat concerned I messed up the parsing of District 9. Let me know if you're succeding on the first few districts and
-> then hitting an error.
+The file `output.txt` contains the output of my solution. I notice two differences from the results on the website:
+1) I ignore the write-in candidate with zero votes.
+2) The number of ballots transferred isn't lining up perfectly.
 
 ### References
 - The idea from this homework came from https://www.cs.jhu.edu/~jason/226/hw8/. 
