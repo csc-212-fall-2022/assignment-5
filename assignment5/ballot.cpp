@@ -6,6 +6,7 @@
 #include <filesystem>
 #include <fstream>
 #include <optional>
+#include <regex>
 #include <stdexcept>
 #include <string>
 #include <tuple>
@@ -14,6 +15,8 @@
 #include <vector>
 
 namespace assignment5 {
+
+const std::regex DISTRICT_REGEX = std::regex("Board of Supervisors, District (\\d+)"); // NOLINT
 
 bool isZero(char c) { return c == '0'; }
 
@@ -177,7 +180,11 @@ ParseElectionMasterLine(const std::string &line) {
     Candidate candidate = {name, std::stoi(sId), std::stoi(candConId)};
     return candidate;
   } else if (type == "Contest") {
-    Contest contest = {name, std::stoi(sId)};
+    std::smatch match;
+    if (!std::regex_search(name, match, DISTRICT_REGEX)) {
+      throw std::runtime_error((boost::format("Failed to match %s") % name).str());
+    }
+    Contest contest = {name, std::stoi(sId), std::stoi(match[1])};
     return contest;
   }
   return std::nullopt;

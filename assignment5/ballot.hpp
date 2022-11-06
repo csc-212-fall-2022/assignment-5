@@ -45,6 +45,7 @@ struct Candidate {
 struct Contest {
   std::string name;
   int id;
+  int district;
 
   bool operator==(const Contest &rhs) const {
     return name == rhs.name && id == rhs.id;
