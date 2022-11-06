@@ -36,7 +36,7 @@ void Election::run() {
     round++;
   }
   // then, when we have a winner, one last step to display them
-  std::cout << "Round" << round << std::endl;
+  std::cout << "Round " << round << std::endl;
   step();
 }
 } // namespace assignment5
