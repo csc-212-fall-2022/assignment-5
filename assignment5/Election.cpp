@@ -19,9 +19,10 @@ void Election::step() {
               << std::endl;
   } else {
     EliminationInfo elimination = queue.eliminate();
-    std::cout << boost::format("%s has been eliminated. %s ballots exhausted") %
+    std::cout << boost::format("%s has been eliminated. %s ballots exhausted, %s ballots transferred") %
                      elimination.eliminatedCandidate.name %
-                     elimination.exhaustedBallots
+                     elimination.exhaustedBallots %
+                    elimination.transferredBallots
               << std::endl;
   }
 }

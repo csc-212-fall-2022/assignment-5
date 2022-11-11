@@ -37,9 +37,9 @@ struct EliminationInfo {
   // the candidate eliminated
   Candidate eliminatedCandidate;
   // the number of ballots exhausted (i.e. with no remaining choices)
-  ulong exhaustedBallots;
+  ulong exhaustedBallots{};
   // the number of ballots transferred to their next choice
-  ulong transferredBallots;
+  ulong transferredBallots{};
 };
 
 // A (sort of) double-ended priority queue to count the votes.
@@ -55,7 +55,9 @@ private:
   // and just maintain the heaps
   std::unordered_map<int, CandidateVotes> votes_by_candidate;
   // number of ballots still active
-  ulong totalVotes;
+  ulong totalVotes{};
+
+  int* find_next_candidate(Ballot&);
 
 public:
   ElectionQueue() = default;

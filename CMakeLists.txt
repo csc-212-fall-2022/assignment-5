@@ -40,6 +40,8 @@ else()
     include_directories(${Boost_INCLUDE_DIRS})
 endif ()
 
+# On OS X if it complains about not being able to find ICU
+# cmake .. -DCMAKE_PREFIX_PATH=/opt/homebrew/opt/icu4c
 find_package(ICU COMPONENTS uc REQUIRED)
 
 add_library(Ballot assignment5/ballot.hpp assignment5/ballot.cpp)
