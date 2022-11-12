@@ -10,6 +10,20 @@ set(CMAKE_CXX_STANDARD 17)
 # https://gcc.gnu.org/onlinedocs/gcc/Optimize-Options.html
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -ggdb3 -Og")
 
+# Attempt to fix the icu issues on OS X. If this doesn't work, let me know
+if (APPLE OR (CMAKE_SYSTEM_NAME EQUAL "Darwin"))
+    # prefer homebrew-install icu4c since the default seems not to be working
+    set(CMAKE_PREFIX_PATH "/opt/hombrew/opt/icu4c")
+
+    list(TRANSFORM CMAKE_PREFIX_PATH APPEND "/include"
+            OUTPUT_VARIABLE CMAKE_CXX_STANDARD_INCLUDE_DIRECTORIES)
+    set(CMAKE_C_STANDARD_INCLUDE_DIRECTORIES "${CMAKE_CXX_STANDARD_INCLUDE_DIRECTORIES}")
+else()
+    # OS X folks don't have clang tidy
+    find_program(CLANG_TIDY_EXE NAME clang-tidy REQUIRED)
+    set(CLANG_TIDY_COMMAND "${CLANG_TIDY_EXE}" "-checks=-*,modernize-*,bugprone-*")
+endif ()
+
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake) # make sure we know where to find the doctest header
 
 find_package(Doctest REQUIRED)
@@ -22,8 +36,6 @@ set(CMAKE_MEMORYCHECK_COMMAND valgrind)
 include(CTest)
 include(FetchContent)
 
-find_program(CLANG_TIDY_EXE NAME clang-tidy REQUIRED)
-set(CLANG_TIDY_COMMAND "${CLANG_TIDY_EXE}" "-checks=-*,modernize-*,bugprone-*")
 
 set(Boost_DEBUG ON)
 find_package(Boost COMPONENTS program_options)
@@ -36,7 +48,7 @@ if (NOT Boost_FOUND)
             )
 
     FetchContent_MakeAvailable(boost)
-else()
+else ()
     include_directories(${Boost_INCLUDE_DIRS})
 endif ()
 
