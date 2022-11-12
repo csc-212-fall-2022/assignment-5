@@ -7,17 +7,17 @@
 namespace assignment5 {
 ElectionQueue::ElectionQueue(const std::vector<Candidate> &candidates,
                              const std::vector<Ballot> &ballots) {
-  std::runtime_error("Implement me!");
+  throw std::runtime_error("Implement me!");
 }
 
 int ElectionQueue::numCandidates() { return minVoteHeap.size(); }
 
-bool ElectionQueue::hasWinner() { std::runtime_error("Implement me!"); }
+bool ElectionQueue::hasWinner() { throw std::runtime_error("Implement me!"); }
 
-Candidate &ElectionQueue::winner() { std::runtime_error("Implement me!"); }
+Candidate &ElectionQueue::winner() { throw std::runtime_error("Implement me!"); }
 
 EliminationInfo ElectionQueue::eliminate() {
-  std::runtime_error("Implement me!");
+  throw std::runtime_error("Implement me!");
 }
 
 void ElectionQueue::max_heapify(std::vector<CandidateVotes> &vec) {
